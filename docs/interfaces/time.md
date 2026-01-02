@@ -1,13 +1,5 @@
 # Time and Structure Modules
-These modules are responsible for two things
-
-1. Determining what time step to take and managing the total time passage
-2. Collecting input from other modules to solve the structure equations
-
-This module is the closest thing thing which this project has to a main
-component. One might think of it as the organizer of all the other modules
-(side-note: I hate that when I try to use a metaphor now I need to worry that
-it will sound like AI).
+This module is responsible for determining what time step to take and managing the total time passage
 
 ## Time
 Time stepping is, broadly, the process of looking at the current state of a
@@ -96,42 +88,6 @@ report the size of the current time step, the current time step number, and the
 current simulation time. There may be other useful information this module
 should handle which you discover throughout the term. 
 
-Time stepping, at least in a stable way, is extremley strongly coupled to 
+Finally, note that time stepping, at least in a stable way, is extremley strongly coupled to 
 the solutions to the equations structure equations. One need know how how much
-those solutions vary through time. Therefore this module has been coupled to 
-the structure module
-
-## Structure
-The other key part of this module is the structure equations. These are the
-four (five) equations of stellar structure we disscussed in class, they must
-be encoded and passed to some sort of solver. I do not expect you to implement 
-your own custom solver; rather, please use a solver that already exists.
-
-There are few key parts of this
-
-### Collecting Microphysics
-The structure equations depend on loads of microphysics, some part of this module will need
-to be responsible for calling the microphysics modules to get values such at the 
-opacity (perhapse as a function), the specific nuclear energy generation,
-and the density.
-
-### Discritization
-Numeric solutions must be solved in some discrete space, this module will need
-to decide where to place the shells that compose our model. I reccomend you
-work in a lagarngian scheme where you use enclosed mass as your indpendent,
-radiaus-like, variable. You will need to consider how to space those shells, 
-are there regions where shells can be more sparsly placed and are there
-regions where they must be more densly spaced (hint: the answer is yes to 
-both of those questions).
-
-### Solution
-Actual SSE codes uses something called a Henyey method to solve the structure
-equations; for this course I reccomend you look into something a bit simpler
-like a shooting-method. There are loads of tools which exist to solve coupled
-systems of equations with a shooting method. They will not be as stable as a
-Henyey method but they will be easier to implement.
-
-### Reporting
-Finally, this module must be able to report the state in some way back to the time module 
-and eventually to some user so that the results can be either stepped through time
-or saved and analyzed.
+those solutions vary through time. 
