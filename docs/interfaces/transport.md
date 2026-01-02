@@ -69,7 +69,7 @@ $$
 $$
 
 $$
-D_{thermo} \propto -\alpha_{th}\frac{3K}{2\rho c_{P}}\frac{\frac{\phi}{\delta}\nabla_{\mu}}{\nabla_{ad} - \nabla_{rad}}
+D_{thermo} = -\alpha_{th}\frac{3K}{2\rho c_{P}}\frac{\frac{\phi}{\delta}\nabla_{\mu}}{\nabla_{ad} - \nabla_{rad}}
 $$
 
 ### Gravitational Settling
