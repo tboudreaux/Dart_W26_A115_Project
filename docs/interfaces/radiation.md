@@ -115,7 +115,7 @@ $$
 Now we need to guess a few things for the current time step, $i$
 we will say that the initial guess stellar radius at time step $i$ is
 $R^{(i,0)}= r^{(i-1)}(M)$ and that the initial guess for luminosity is
-$L^{(i,0)} = L^{(i-1)(M)}$. Note that by using $M$ we are really saying we 
+$L^{(i,0)} = L^{(i-1)}(M)$. Note that by using $M$ we are really saying we 
 want the outer most gridpoint.
 
 We can then compute
@@ -165,7 +165,9 @@ $$
 T^{(i)}(M) = T_{fit}^{(i,0)}
 $$
 
-from these the solver module / structure module needs to produce
+Again these are saying that the temperature and pressure at the outter grid
+point must match whatever the fitting temperature and pressure are. From these
+the solver module / structure module needs to produce
 
 $$
 [ r^{i}(m), P^{(i)}(m), T^{(i)}(m), L^{(i)}(m)]
